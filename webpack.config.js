@@ -2,21 +2,21 @@
 /* eslint import/no-nodejs-modules: off, import/no-default-export: off */
 
 import type { WebpackConfig } from 'grumbler-scripts/config/types';
-import { getWebpackConfig, getNextVersion } from 'grumbler-scripts/config/webpack.config';
+import { getWebpackConfig, getCurrentVersion } from 'grumbler-scripts/config/webpack.config';
 import { argv } from 'yargs';
 
 import pkg from './package.json';
 import globals from './globals';
 
-const __NEXT_VERSION__ = getNextVersion(pkg, argv.level);
+const __CURRENT_VERSION__ = getCurrentVersion(pkg, argv.level);
 
 const zoidGlobals = {
     ...globals,
 
     __ZOID__: {
         ...globals.__ZOID__,
-        __VERSION__:    __NEXT_VERSION__,
-        __GLOBAL_KEY__: `__zoid_${ __NEXT_VERSION__ }__`
+        __VERSION__:    __CURRENT_VERSION__,
+        __GLOBAL_KEY__: `__zoid_${ __CURRENT_VERSION__ }__`
     }
 };
 

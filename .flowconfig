@@ -4,6 +4,7 @@
 .*/node_modules/npm
 .*/node_modules/jsonlint
 .*/dist/module
+.*/**/malformed_package_json/package.json
 [include]
 [libs]
 flow-typed
